@@ -25,7 +25,7 @@ m = size(X,1);
 for i = 1:m
     delta = zeros(K,1);
     for j = 1:K
-        delta(j) = sqrt(sum((power(X(i, :) - centroids(j, :), 2))));
+        delta(j) = sqrt(sum((X(i, :) - centroids(j, :)).^2));
     end
 
     [d, d_idx] = min(delta);
